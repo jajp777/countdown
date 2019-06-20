@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<TITLE>Upgrade to Lync</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// AUTHOR:          Patrick Fairfield
+//                    www.FairfieldConsulting.com   
+//                    Based heavily on:
+//                    Maxim V. Kollegov, All Rights Reserved.
+//              http://www.geocities.com/SiliconValley/Lakes/8620
+//              Modified with permission by Joe Hage - Team ScriptBuilder
+//              Feel free to reuse this code provided you include this
+//              AUTHOR section in your pages.
+// DESC:        Display a ticking countdown clock on your web page.
+// Sample HTML: COUNTDOWN.HTML
+// PLATFORMS:   Netscape Navigator 3.0 and higher,
+//                   Microsoft Internet Explorer 3.02 and higher
+// ======================================================================
+//change your event date event here.
+
+
+//Put this time in GMT and the browser will display in the user's local time!
+var eventdate = new Date("October 7, 2019 23:00:00 UTC");
+
+function toSt(n) {
+ s=""
+ if(n<10) s+="0"
+ return s+n.toString();
+}
+
+function countdown() {
+ cl=document.clock;
+ d=new Date();
+ count=Math.floor((eventdate.getTime()-d.getTime())/1000);
+ if(count<=0)
+   {cl.days.value ="----";
+    cl.hours.value="--";
+    cl.mins.value="--";
+    cl.secs.value="--";
+    return;
+  }
+ cl.secs.value=toSt(count%60);
+ count=Math.floor(count/60);
+ cl.mins.value=toSt(count%60);
+ count=Math.floor(count/60);
+ cl.hours.value=toSt(count%24);
+ count=Math.floor(count/24);
+ cl.days.value=count;    
+ 
+ setTimeout("countdown()",500);
+}
+// end hiding script-->
+</SCRIPT>
+</HEAD>
+
+<!-- Custom CSS settings -->
+<style>
+
+H2,table,input {
+	FONT-family:"arial, helvetica";
+	COLOR:"#05619E";
+	text-align:center;
+	font-size:1.5em;
+}
+
+p {
+	FONT-family:"arial, helvetica";
+	COLOR:"#05619E";
+	text-align:center;
+	font-size:1.5em;
+}
+
+img.centre {
+	text-align:center;
+    display: block;
+    margin-left: auto;   
+    margin-right: auto;
+}
+
+</style>
+
+<BODY BGCOLOR="#87C9F5" TEXT="#05619E" LINK="#0000A0" ALINK="#FF0000" VLINK="#800000" onLoad="countdown()">
+
+<br><br>
+
+<H2>You need to upgrade to Skype for business!!</FONT></H2>
+<img class="centre" src="sfb.png" alt="Skype for business" height="10%" width="5%">
+<H2>Your existing "Communicator client" will stop working from</H2>
+<H2>
+              <SCRIPT LANGUAGE="JavaScript">
+              <!--
+              document.write(" " + eventdate.toLocaleString() + " ");
+              // end hiding script-->
+              </SCRIPT>
+			  </H2>
+
+<CENTER>
+<FORM name="clock">
+<TABLE BORDER=2 CELLSPACING=5 CELLPADDING=0>
+    <TR>
+         <TD ALIGN=CENTER WIDTH="25%" BGCOLOR="#87C9F5">Days:</TD>
+         <TD ALIGN=CENTER WIDTH="25%" BGCOLOR="#87C9F5">Hours:</TD>
+         <TD ALIGN=CENTER WIDTH="25%" BGCOLOR="#87C9F5">Mins:</TD>
+         <TD ALIGN=CENTER WIDTH="25%" BGCOLOR="#87C9F5">Secs:</TD>
+    </TR>
+    <TR>
+         <TD ALIGN=CENTER><INPUT name="days" size=2></TD>
+         <TD ALIGN=CENTER><INPUT name="hours" size=2></TD>
+         <TD ALIGN=CENTER><INPUT name="mins" size=2></TD>
+         <TD ALIGN=CENTER><INPUT name="secs" size=2></TD>
+    </TR>
+    </TABLE>
+</FORM>
+</CENTER>
+<br>
+<p>Please download the upgrade from <a href="https://greiginsydney.com" target="_blank">here</a>.</p>
+<p>If you're experiencing any problems with this, contact Helpdesk on <a href="tel:+61212345678">+61 2 12345678</a>, lorem ipsum yadda yadda.</p>
+</BODY>
+</HTML>
